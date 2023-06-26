@@ -9,14 +9,24 @@ export default {
         decorator.appendChild(story());
         return decorator;
     }],
-    // parameters: {
-    //     docs: {
-    //         page: null,
-    //         description: {
-    //             component: ButtonDocs,
-    //         },
-    //     },
-    // },
+    parameters: {
+        actions: {
+            handles: ['mouseover'],
+        },
+        backgrounds: {
+            default: 'default',
+            values: [
+                { name: 'blackfriday', value: '#000000' },
+                { name: 'default', value: '#ffffff' },
+            ],
+        },
+        // docs: {
+        //     page: null,
+        //     description: {
+        //         component: ButtonDocs,
+        //     },
+        // },
+    },
     argTypes: {
         label: {
             name: 'label',
@@ -37,7 +47,11 @@ export default {
             control: {
                 type: 'radio',
             }
-        }
+        },
+        onClick: {
+            description: 'Event',
+            action: 'clicked',
+        },
     },
 }
 
