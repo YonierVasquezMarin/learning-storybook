@@ -22,6 +22,7 @@
     "@storybook/html-vite": "^7.0.23",
     "@storybook/jest": "^0.1.0",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "chromatic": "^6.19.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.0.23"
