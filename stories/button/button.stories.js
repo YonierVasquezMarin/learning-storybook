@@ -1,3 +1,5 @@
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import { createButton } from "./button"
 // import ButtonDocs from './button.md'
 
@@ -60,7 +62,11 @@ const Template = ({ label, ...args }) => {
 }
 
 export const Default = Template.bind({});
-
 Default.args = {
     label: 'My Button',
 }
+Default.play = async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('button'));
+    await expect(canvas.getByText('My Button')).toBeInTheDocument();
+};
